@@ -1,5 +1,5 @@
 """Exercise 03: Wordle"""
-___author___ = "730408141"
+__author__ = "730408141"
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
