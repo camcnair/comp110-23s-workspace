@@ -1,7 +1,11 @@
 """Unit Tests for EX05."""
 __author__ = "730408141"
 
+
 from exercises.ex05.utils import only_evens
+from exercises.ex05.utils import sub
+from exercises.ex05.utils import concat
+
 
 def test_empty_only_evens() -> None:  # edge case
     """Tests only_evens with an empty list."""
@@ -27,10 +31,8 @@ def test_negatives() -> None:  # use case
     assert only_evens(test_list) == [-2, -4, -6]
 
 
-from exercises.ex05.utils import concat
-
 def test_empty() -> None:  # edge case
-    """Tests concat with an empty list"""
+    """Tests concat with an empty list."""
     test_list1: list[int] = []
     test_list2: list[int] = []
     assert concat(test_list1, test_list2) == []
@@ -49,8 +51,6 @@ def test_with_different_lengths() -> None:  # use case
     test_list2: list[int] = [7, 8]
     assert concat(test_list1, test_list2) == [1, 2, 3, 4, 5, 6, 7, 8]
 
-
-from exercises.ex05.utils import sub
 
 def test_empty_sub() -> None:  # edge case
     """Tests sub with an empty list."""

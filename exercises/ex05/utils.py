@@ -1,6 +1,7 @@
 """Exercise 05: List Utily Functions."""
 __author__ = "730408141"
 
+
 def only_evens(xs: list[int]) -> list[int]:
     """Returns only the even integers in a given list."""
     evens: list[int] = []
@@ -29,6 +30,3 @@ def sub(a_list: list[int], start: int, stop: int) -> list[int]:
     for idx in range(start, stop):
         modified.append(a_list[idx])
     return modified
-
-
-
