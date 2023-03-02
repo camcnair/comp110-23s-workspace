@@ -12,7 +12,7 @@ def only_evens(xs: list[int]) -> list[int]:
 
 def concat(list1: list[int], list2: list[int]) -> list[str]:
     """Concatenates 2 lists of ints into 1 list."""
-    combined_list: list[str] = [str(list1) + str(list2)]  # lists turned into strings in order to concatenate
+    combined_list: list[int] = list1 + list2
     return combined_list
 
 

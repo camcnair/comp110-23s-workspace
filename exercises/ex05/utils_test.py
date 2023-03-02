@@ -33,21 +33,21 @@ def test_empty() -> None:  # edge case
     """Tests concat with an empty list"""
     test_list1: list[int] = []
     test_list2: list[int] = []
-    assert concat(test_list1, test_list2) == ['[][]']
+    assert concat(test_list1, test_list2) == []
 
 
 def test_many_concat() -> None:  # use case
     """Tests concat with multiple items in each list."""
     test_list1: list[int] = [1, 2, 3, 4, 5]
     test_list2: list[int] = [6, 7, 8, 9, 10]
-    assert concat(test_list1, test_list2) == ['[1, 2, 3, 4, 5][6, 7, 8, 9, 10]']
+    assert concat(test_list1, test_list2) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 def test_with_different_lengths() -> None:  # use case
     """Tests concat with 2 lists of different lengths."""
     test_list1: list[int] = [1, 2, 3, 4, 5, 6]
     test_list2: list[int] = [7, 8]
-    assert concat(test_list1, test_list2) == ['[1, 2, 3, 4, 5, 6][7, 8]']
+    assert concat(test_list1, test_list2) == [1, 2, 3, 4, 5, 6, 7, 8]
 
 
 from exercises.ex05.utils import sub
