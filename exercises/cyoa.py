@@ -30,7 +30,7 @@ def main() -> None:
         if path == "C":  # chose to investigate the ballroom
             C()
         if path == "D":  # chose to try for bonus points
-            points += D(points) 
+            points = D(points) 
         if path == "E":  # chose to stop playing
             print(f"{MAGNIFY} Come back soon, {player}! Your total adventure points: {points}")
             playing = False
@@ -40,7 +40,7 @@ def greet() -> None:
     """Greets the player."""
     global player 
     player = input(f"{MAGNIFY} Welcome brave adventurer! What is your name? ")
-    print(f"{MAGNIFY} Welcome {player}! You have been tasked with solving the murder of Colonel Mustard within the Mustard estate. The murder occurred during a dinner party hosted by Colonel Mustard, in which his guests, and prime suspects, include Mrs. Peacock, Ms. Scarlet, and Mr. Green. The body was found in the entryway, and the murder weapon is reported to be a revolver based on the gunshot wounds inspected his body. The police are holding each suspect in different rooms until you can solve the case and ensure that the murderer is captured. Police on the scene reported that whoever is the murderer would surely have the murder weapon on them still, since they arrived to the scene only {death_time} minutes after they received the call. Each choice you make will earn you a certain number of \"adventure points\" to be totaled at the end of the game. It is up to you to catch this killer and solve the murder of Colonel Mustard before the killer strikes again!")
+    print(f"{MAGNIFY} Welcome {player}! You have been tasked with solving the murder of Colonel Mustard within the Mustard estate. The murder occurred during a dinner party hosted by Colonel Mustard, in which his guests, and prime suspects, include Mrs. Peacock, Ms. Scarlet, and Mr. Green. The body was found in the entryway, and the murder weapon is reported to be a revolver based on the gunshot wounds inspected on his body. The police are holding each suspect in different rooms until you can solve the case and ensure that the murderer is captured. Police on the scene reported that whoever is the murderer would surely have the murder weapon on them still, since they arrived to the scene only {death_time} minutes after they received the call. Each choice you make will earn you a certain number of \"adventure points\" to be totaled at the end of the game. It is up to you to catch this killer and solve the murder of Colonel Mustard before the killer strikes again!")
 
 
 def A() -> None:
@@ -95,16 +95,16 @@ def C() -> None:
 
 def D(x: int) -> int:
     """Opportunity for player to earn bonus points."""
-    points: int = 0
     stolen: int = random.randint(2000, 4000)
     print(f"{MAGNIFY} Hello, {player}, while you have been searching the rooms and suspects, police have continued investigating and found that a signifant sum of money, between $2000 and $4000 {MONEY_BAG}, has gone missing from Colonel Mustards bank account. Therefore, they concluded that the motive of the killer was surely to acquire this money. If you can correctly guess the amount of money withdrawn within $500, you will earn 5 bonus adventure points.")
     guess: int = int(input(f"{MAGNIFY} How much money do you think was stolen? Answer without a dollar sign. "))
     if (stolen - guess > 500) or (guess - stolen > 500):
         print(f"{MAGNIFY} Sorry, that wasn't close enough.")
-        return points
+        return x
     else:  # guess was close enough to value
-        points += 5
-        return points
+        print(f"{MAGNIFY} You got it, {player}!")
+        x += 5
+        return x
 
 
 if __name__ == "__main__":
