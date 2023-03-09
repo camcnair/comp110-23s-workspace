@@ -11,3 +11,4 @@ def zip(keys: list[str], values: list[int]) -> dict[str,int]:
         return dictionary
     for idx in range(0, len(keys)):
         dictionary[keys[idx]] = values[idx]
+    return dictionary
