@@ -1,4 +1,5 @@
 """Short Words."""
+__author__ = "730408141"
 
 
 def short_words(x: list[str]) -> list[str]:
@@ -8,5 +9,5 @@ def short_words(x: list[str]) -> list[str]:
         if len(word) < 5:
             new_list.append(word)
         else:
-            print(f"{word} is too long.")
+            print(f"{word} is too long!")
     return new_list
