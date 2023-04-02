@@ -1,3 +1,7 @@
+"""Data utils for EX08."""
+__author__ = "730408141"
+
+
 from csv import DictReader
 
 
