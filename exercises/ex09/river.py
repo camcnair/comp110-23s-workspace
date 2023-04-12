@@ -12,7 +12,7 @@ class River:
     bears: list[Bear]
     fish: list[Fish]
 
-    def __init__(self, num_fish: int, num_bears:int):
+    def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
