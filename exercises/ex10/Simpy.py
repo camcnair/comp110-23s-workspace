@@ -20,7 +20,7 @@ class Simpy:
         """Return a str of Simpy."""
         return (f"Simpy({self.values})")
     
-    def fill(self, num_to_fill: float, num_fills: int) -> Simpy:
+    def fill(self, num_to_fill: float, num_fills: int) -> None:
         """Fill Simpy's values with a specific number."""
         while num_fills > 0:
             self.values.append(num_to_fill)
