@@ -8,28 +8,27 @@ __author__ = "730408141"
 
 
 class Simpy:
-    
     """Simpy class."""
 
     values: list[float]
 
     def __init__(self, values_inp: list[float]):
-        """Initializes a Simpy object."""
+        """Initialize a Simpy object."""
         self.values = values_inp
 
     def __str__(self) -> str:
-        """Returns a str of Simpy."""
+        """Return a str of Simpy."""
         return (f"Simpy({self.values})")
     
     def fill(self, num_to_fill: float, num_fills: int) -> Simpy:
-        """Fills Simpy's values with a specific number."""
+        """Fill Simpy's values with a specific number."""
         while num_fills > 0:
             self.values.append(num_to_fill)
             num_fills -= 1
         return self
 
     def arange(self, start: float, stop: float, step: float = 1.0) -> None:
-        """Fill's Simpy's values with a certain range."""
+        """Fill Simpy's values with a certain range."""
         assert step != 0.0
         while (step > 0 and start < stop) or (step < 0 and start > stop):
             self.values.append(start)
@@ -37,12 +36,12 @@ class Simpy:
         return self
 
     def sum(self) -> float:
-        """Adds Simpy's values together."""
+        """Add Simpy's values together."""
         total: float = sum(self.values)
         return total
     
     def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
-        """Overloads addition operator."""
+        """Overload addition operator."""
         new_simpy: Simpy = Simpy([])
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -54,7 +53,7 @@ class Simpy:
         return new_simpy
     
     def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
-        """Overloads the power operator."""
+        """Overload the power operator."""
         new_simpy: Simpy = Simpy([])
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -66,7 +65,7 @@ class Simpy:
         return new_simpy
     
     def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
-        """Checks for equalities."""
+        """Check for equalities."""
         equalities: list[bool] = []
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -84,7 +83,7 @@ class Simpy:
         return equalities
     
     def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
-        """Tests for greater than with Simpy objects."""
+        """Test for greater than with Simpy objects."""
         equalities: list[bool] = []
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -102,7 +101,7 @@ class Simpy:
         return equalities
     
     def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
-        """Allows subscription notation with Simpys."""
+        """Allow subscription notation with Simpys."""
         if type(rhs) == int:
             return self.values[rhs]
         else:
